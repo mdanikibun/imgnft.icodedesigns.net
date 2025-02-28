@@ -1,5 +1,5 @@
-//0xD93FC7e58a45C6EAb2a87b6AE33A258129abdd89
-// https://sepolia.etherscan.io/ > find: 0xD93FC7e58a45C6EAb2a87b6AE33A258129abdd89 => check transaction
+//0x9853A64c78a0B6A53Cbb52ad2de46121e8f2D3Ca
+// https://sepolia.etherscan.io/ > find: 0x9853A64c78a0B6A53Cbb52ad2de46121e8f2D3Ca => check transaction
 import nftMarketplace from "./NFTMarketplace.json";
 
 export const NFTMarketplaceAddress = "0xD93FC7e58a45C6EAb2a87b6AE33A258129abdd89";
