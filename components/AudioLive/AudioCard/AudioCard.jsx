@@ -4,7 +4,7 @@ import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 import {TbPlayerPlay, TbPlayerPause} from "react-icons/tb";
 
 // INTERNAL IMPORT
-import Style from "./audioCard.module.css";
+import Style from "./AudioCard.module.css";
 import images from "../../../img";
 import LikeProfile from "../../LikeProfile/LikeProfile";
 
