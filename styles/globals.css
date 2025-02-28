@@ -1,0 +1,89 @@
+
+/*THEME 1*/
+:root {
+    --icons-color: #4c5773;
+    --icons-light-color: #4c577341;
+    --icons-bg-color: #e2e6e9;
+    --shadow-dark-color: #d3dae7;
+    --bg-shadow-dark-color: #d3dae784;
+    --shadow-light-color: #fff;
+    --main-bg-color: #ecf0f3;
+    --overlay: rgba(35, 35, 37, 0.75);
+
+    --box-shadow: 1rem 1rem 1rem var(--shadow-dark-color), -1rem -1rem 1rem var(--shadow-light-color);
+
+    --box-shadow-2: 0rem 0rem 0rem var(--shadow-dark-color), -.3rem -.3rem 1rem var(--shadow-dark-color);
+}
+/*THEME 1*/
+
+/*THEME 2*/
+/*:root {*/
+/*    --icons-color: #ffdf2b;*/
+/*    --icons-light-color: #ffdf2b57;*/
+/*    --icons-bg-color: #ffdf2b;*/
+/*    --shadow-dark-color: #555557;*/
+/*    --bg-shadow-dark-color: #555557;*/
+/*    --shadow-light-color: #232325;*/
+/*    --main-bg-color: #232325;*/
+
+/*    --box-shadow: 1px 1px 2px #ffdf2b, -1px -1px 2px #ffdf2b;*/
+
+/*    --box-shadow-2: 1px 1px 2px #ffdf2b, -1px -1px 2px #ffdf2b;*/
+/*}*/
+/*THEME 2*/
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    background-color: var(--main-bg-color) !important;
+    color: var(--icons-color) !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.2;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: none;
+}
+
+::selection {
+    color: var(--shadow-dark-color);
+    background: var(--icons-color);
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+    border: 1px solid var(--main-bg-color);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: var(--main-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background: var(--icons-color);
+    width: .5rem;
+}
+
+/*@media (prefers-color-scheme: dark) {*/
+/*    html {*/
+/*        color-scheme: dark;*/
+/*    }*/
+
+/*    body {*/
+/*        color: white;*/
+/*        background: black;*/
+/*    }*/
+/*}*/
