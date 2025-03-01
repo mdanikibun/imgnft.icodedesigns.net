@@ -55,6 +55,7 @@
     align-items: center;
     text-align: center;
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .navbar_container_right_discover {
@@ -95,6 +96,7 @@
 
 .navbar_container_right_profile_box {
     position: relative;
+    font-size: 1.1rem;
 }
 
 .AuthorProfileCard_box_info_address_text {
