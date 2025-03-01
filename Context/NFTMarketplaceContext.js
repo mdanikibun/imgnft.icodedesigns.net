@@ -41,6 +41,8 @@ export const NFTMarketplaceProvider = (({children}) => {
     // USE-STATE
     const [error, setError] = useState("");
     const [openError, setOpenError] = useState(false);
+    const [loading, setLoading] = useState("");
+    const [openLoading, setOpenLoading] = useState(false);
     const [currentAccount, setCurrentAccount] = useState("");
     const router = useRouter();
 
@@ -57,8 +59,9 @@ export const NFTMarketplaceProvider = (({children}) => {
             if (accounts.length) {
                 setCurrentAccount(accounts[0]);
             } else {
-                setOpenError(true);
-                setError("Không tìm thấy tài khoản");
+                //setOpenError(true);
+                //setError("Không tìm thấy tài khoản");
+                console.log("Không tìm thấy tài khoản");
             }
 
             console.log(`checkIfWalletConnected: ${currentAccount}`);
@@ -146,6 +149,7 @@ export const NFTMarketplaceProvider = (({children}) => {
 
         try {
             await createSale(image, price, name, description, category);
+            setOpenLoading(false);
             await router.push('/searchPage');
         } catch (error) {
             setOpenError(true);
@@ -156,6 +160,9 @@ export const NFTMarketplaceProvider = (({children}) => {
     // createSale FUNCTION
     const createSale = async (url, formInputPrice, name, description, category, isReselling, id) => {
         try {
+
+            setOpenLoading(true);
+            setLoading('...Hệ thống đang xử lý, vui lòng đợi trong giây lát...');
 
             // update name + description when click btn submit to show data
             await axios.get(`${url}?IsUpdate=1&name=${name}&description=${description}&price=${formInputPrice}&category=${category}`);
@@ -171,16 +178,23 @@ export const NFTMarketplaceProvider = (({children}) => {
                 });
 
             await transaction.wait();
+            setOpenLoading(false);
         } catch (error) {
             setOpenError(true);
             setError("Có lỗi trong khi tạo NFT ở Hợp Đồng Thông Minh");
         }
+        setOpenLoading(false);
     }
 
     // FETCH NFT FUNCTION
     const fetchNFTs = async () => {
         try {
             const provider = new ethers.providers.JsonRpcProvider("https://sepolia.infura.io/v3/4c689aaa2f9a4d449ff95b190ab3beaf");
+
+            // TODO: comment lại code khi up-git để tránh xung đột với LIVE
+            // const provider = new ethers.providers.JsonRpcProvider(); // localhost
+            // TODO: comment lại code khi up-git để tránh xung đột với LIVE
+
             const contract = fetchContract(provider);
             const data = await contract.fetchMarketItems();
             //console.log(`fetchNFTs`, data)
@@ -211,8 +225,9 @@ export const NFTMarketplaceProvider = (({children}) => {
                 })
             );
         } catch (error) {
-            setOpenError(true);
-            setError("Có lỗi trong khi lấy danh sách NFT");
+            //setOpenError(true);
+            //setError("Có lỗi trong khi lấy danh sách NFT");
+            console.log("Có lỗi trong khi lấy danh sách NFT");
         }
     }
 
@@ -255,8 +270,9 @@ export const NFTMarketplaceProvider = (({children}) => {
                 })
             );
         } catch (error) {
-            setOpenError(true);
-            setError("Có lỗi trong khi lấy danh sách NFT đang rao bán");
+            //setOpenError(true);
+            //setError("Có lỗi trong khi lấy danh sách NFT đang rao bán");
+            console.log("Có lỗi trong khi lấy danh sách NFT đang rao bán");
         }
     }
 
@@ -267,6 +283,9 @@ export const NFTMarketplaceProvider = (({children}) => {
     // BUY NFTs FUNCTION
     const buyNFT = async (nft) => {
         try {
+            setOpenLoading(true);
+            setLoading('...Hệ thống đang xử lý, vui lòng đợi trong giây lát...');
+
             const contract = await connectingWithSmartContract();
             const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
             const transaction = await contract.createMarketSale(nft.tokenId, {
@@ -274,11 +293,13 @@ export const NFTMarketplaceProvider = (({children}) => {
             });
 
             await transaction.wait();
+            setOpenLoading(false);
             router.push("/author");
         } catch (error) {
             setOpenError(true);
             setError("Có lỗi trong khi mua NFT");
         }
+        setOpenLoading(false);
     }
 
     return (
@@ -295,7 +316,10 @@ export const NFTMarketplaceProvider = (({children}) => {
             titleData,
             setOpenError,
             openError,
-            error
+            error,
+            setOpenLoading,
+            openLoading,
+            loading
         }}>
             {children}
         </NFTMarketplaceContext.Provider>

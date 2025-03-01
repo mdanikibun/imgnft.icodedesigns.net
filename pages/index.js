@@ -41,7 +41,7 @@ const Home = () => {
 
     useEffect(() => {
         fetchNFTs().then((item) => {
-            if (item.length > 0) {
+            if (typeof item !== "undefined" && item.length > 0) {
                 setNfts(item.reverse());
                 setNftsCopy(item);
             }

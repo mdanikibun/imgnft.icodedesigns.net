@@ -55,6 +55,7 @@ import founder3 from './founder-3.png';
 import founder4 from './founder-4.png';
 import loader from './loadergif.gif';
 import errorgif from './errorgif.gif';
+import loadinggif from './loadinggif.gif';
 import nft_cat_1 from './nft_cat_1.png';
 import nft_cat_2 from './nft_cat_2.png';
 import nft_cat_3 from './nft_cat_3.png';
@@ -116,6 +117,7 @@ export default {
   earn,
   NFTVideo,
   loader,
+  loadinggif,
   errorgif,
   nft_cat_1,
   nft_cat_2,

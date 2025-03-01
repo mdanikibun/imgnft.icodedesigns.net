@@ -30,8 +30,8 @@ const NFTCard = ({NFTData}) => {
                                 className={Style.NFTCard_box_img_img}
                                 src={el.image}
                                 alt="NFT images"
-                                width={600}
-                                height={600}
+                                width={200}
+                                height={200}
                             />
                         </div>
                         <div className={Style.NFTCard_box_update}>

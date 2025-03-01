@@ -46,7 +46,7 @@ const NFTDescription = ({nft}) => {
                             <small>Tác giả:</small> <br/>
                             <Link href={{pathname: "/author", query: `${nft.seller}`}}>
                                 <span>
-                                    Nguyễn Buôn <MdVerified/>
+                                    Tên-Tác-Giả <MdVerified/>
                                 </span>
                             </Link>
                         </div>

@@ -14,7 +14,8 @@
 .NFTDetailsImg_box_NFT_img_img {
     border-radius: 1rem;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    border: 1px dashed #9e9e9e45;
 }
 
 .NFTDetailsImg_box_NFT_like {

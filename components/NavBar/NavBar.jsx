@@ -11,7 +11,7 @@ import {CgMenuLeft, CgMenuRight} from "react-icons/cg";
 // INTERNAL IMPORT
 import Style from "./NavBar.module.css";
 import {Discover, HelpCenter, Notification, Profile, SideBar} from "./index";
-import {Button, Error} from "../componentsindex";
+import {Button, Error, Loading} from "../componentsindex";
 import images from "../../img";
 
 // IMPORT FROM SMART-CONTRACT
@@ -57,7 +57,7 @@ const NavBar = () => {
     }
 
     // SMART-CONTRACT SECTION
-    const {currentAccount, connectWallet, openError} = useContext(NFTMarketplaceContext);
+    const {currentAccount, connectWallet, openError, openLoading} = useContext(NFTMarketplaceContext);
 
     return (
         <div className={Style.navbar}>
@@ -157,6 +157,7 @@ const NavBar = () => {
             }
 
             {openError && <Error/>}
+            {openLoading && <Loading/>}
 
         </div>
     )

@@ -13,7 +13,7 @@ const NFTCardTwo = ({NFTData}) => {
 
     return (
         <div className={Style.NFTCardTwo}>
-            {NFTData.map((el, i) => (
+            {(typeof NFTData !== "undefined" && NFTData.length > 0) && NFTData.map((el, i) => (
                 <Link href={{pathname: "/NFT-details", query: el }} key={i + 1}>
                     <div className={Style.NFTCardTwo_box} key={i + 1}>
                         <div className={Style.NFTCardTwo_box_like}>
@@ -45,9 +45,6 @@ const NFTCardTwo = ({NFTData}) => {
                                     <small>Giá hiện tại</small>
                                     <p>{el.price} ETH</p>
                                 </div>
-                                <p className={Style.NFTCardTwo_box_price_stock}>
-                                    <MdTimer/> <span>{i + 1} giờ trước</span>
-                                </p>
                             </div>
                         </div>
                     </div>

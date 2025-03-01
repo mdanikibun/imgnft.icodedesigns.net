@@ -53,7 +53,7 @@ const AuthorProfileCard = ({currentAccount}) => {
 
                 <div className={Style.AuthorProfileCard_box_info}>
                     <h2>
-                        Nguyễn Buôn{""}{" "}
+                        Tên-Tác-Giả{""}{" "}
                         <span>
                         <MdVerified/>
                     </span>{" "}

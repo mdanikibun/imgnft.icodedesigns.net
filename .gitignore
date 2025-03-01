@@ -70,3 +70,5 @@ typechain-types
 cache
 artifacts
 
+#define contract
+/Context/NFTMarketplace.json
