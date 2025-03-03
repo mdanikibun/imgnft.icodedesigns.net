@@ -22,7 +22,7 @@ const HeroSection = () => {
                     <h1>{titleData}✨</h1>
                     <p>Khám phá những NFT nổi bật nhất trong mọi chủ đề của cuộc sống. Sáng tạo NFT của bạn và bán chúng.</p>
                     <Button
-                        btnName={"Băt đầu tìm kiếm"}
+                        btnName={"Bắt đầu tìm kiếm"}
                         handleClick={() => router.push("/searchPage")}
                     />
                 </div>
