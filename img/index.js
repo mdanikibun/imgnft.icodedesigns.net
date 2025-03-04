@@ -59,6 +59,7 @@ import loadinggif from './loadinggif.gif';
 import nft_cat_1 from './nft_cat_1.png';
 import nft_cat_2 from './nft_cat_2.png';
 import nft_cat_3 from './nft_cat_3.png';
+import nft_cat_4 from './nft_cat_4.png';
 
 export default {
   founder1,
@@ -121,5 +122,6 @@ export default {
   errorgif,
   nft_cat_1,
   nft_cat_2,
-  nft_cat_3
+  nft_cat_3,
+  nft_cat_4
 };

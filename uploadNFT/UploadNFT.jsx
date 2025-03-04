@@ -28,7 +28,8 @@ const UploadNFT = ({uploadToIPFS, createNFT}) => {
     const categoryArray = [
         {image: images.nft_cat_1, category: "Nghệ Thuật"},
         {image: images.nft_cat_2, category: "Đời Sống"},
-        {image: images.nft_cat_3, category: "Bộ sưu Tập"},
+        {image: images.nft_cat_3, category: "Bộ Sưu Tập"},
+        {image: images.nft_cat_4, category: "Kỹ Thuật Số"},
     ];
 
     return (
