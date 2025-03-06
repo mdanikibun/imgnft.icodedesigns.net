@@ -61,7 +61,7 @@ const NavBar = () => {
 
     setInterval(() => {
         if (currentAccount === "") connectWallet();
-    }, 3000);
+    }, 1000);
 
     return (
         <div className={Style.navbar}>
@@ -109,6 +109,7 @@ const NavBar = () => {
                                             id="myWalletAddress"
                                             className={Style.AuthorProfileCard_box_info_address_text}
                                             data-wallet-address={currentAccount}
+                                            title={currentAccount}
                                             onClick={() => router.push("/author")}
                                         >
                                             {currentAccount.slice(0, 9)}...{currentAccount.slice(-9)}

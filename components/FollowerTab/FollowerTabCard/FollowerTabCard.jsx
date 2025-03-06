@@ -50,7 +50,7 @@ const FollowerTabCard = ({el, i}) => {
 
                 <div className={Style.FollowerTabCard_box_info}>
                     <div className={Style.FollowerTabCard_box_info_name}>
-                        <h4>
+                        <h4 title={el.seller}>
                             {el.seller.slice(0, 5)}...{el.seller.slice(-5)}{""}{" "}
                             <span>
                                 <MdVerified/>
