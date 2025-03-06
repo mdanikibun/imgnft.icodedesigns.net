@@ -50,3 +50,25 @@
         font-size: 1rem;
     }
 }
+
+@media screen and (max-width: 1366px) {
+    .SubscriptionBox {
+        padding: 1.5rem;
+    }
+    .SubscriptionBox_box_small {
+        right: 1rem;
+        font-size: 1rem;
+    }
+    .SubscriptionBox_box_span {
+        font-size: 1.2rem;
+    }
+    .SubscriptionBox_box_price {
+        font-size: 2rem;
+    }
+    .SubscriptionBox_box_info {
+        margin: 3rem 0;
+    }
+    .SubscriptionBox_box_info_para {
+        font-size: 1.2rem;
+    }
+}

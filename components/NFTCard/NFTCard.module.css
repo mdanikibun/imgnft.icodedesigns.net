@@ -198,3 +198,29 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media screen and (max-width: 1366px) {
+    .NFTCard_box {
+        width: 350px;
+        height: 350px;
+    }
+    .NFTCard_box_update_details_price_box_bid p {
+        font-size: 1rem;
+    }
+    .NFTCard_NFTCard_box_update_right {
+        padding: 0 5rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .NFTCard {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .NFTCard_box {
+        width: 420px;
+        height: 420px;
+    }
+}

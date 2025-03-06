@@ -30,7 +30,6 @@
 
 .uploadNFT_box_title h2 {
     font-size: 2.5rem;
-    line-height: 0;
 }
 
 .uploadNFT_box_title p {
@@ -51,5 +50,11 @@
     .uploadNFT_box_title h2 {
         font-size: 1.5rem;
         line-height: 1.1;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .uploadNFT_box {
+        width: 90%;
     }
 }

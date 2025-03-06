@@ -48,3 +48,12 @@
         gap: 1rem;
     }
 }
+
+@media screen and (max-width: 1366px) {
+    .contactUs_box {
+        width: 80%;
+    }
+    .contactUs_box_box {
+        gap: 1rem;
+    }
+}

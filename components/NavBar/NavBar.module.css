@@ -182,7 +182,23 @@
     }
 }
 
+@media screen and (max-width: 1366px) {
+    .navbar_container_right {
+        font-size: 1.15rem;
+    }
+}
 
+@media screen and (max-width: 1024px) {
+    .navbar_container {
+        width: 95%;
+    }
+    .navbar_container_right {
+        font-size: 1rem;
+    }
+    .navbar_container_right_profile_box {
+        font-size: 0.9rem;
+    }
+}
 
 
 

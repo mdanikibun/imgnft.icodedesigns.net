@@ -45,7 +45,6 @@
 
 .connectWallet_box_provider_item p {
     font-size: 1.5rem;
-    line-height: 0;
 }
 
 .active {
@@ -59,5 +58,11 @@
 
     .connectWallet_box h1 {
         font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .connectWallet_box {
+        width: 90%;
     }
 }

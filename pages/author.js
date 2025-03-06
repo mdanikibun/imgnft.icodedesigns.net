@@ -13,17 +13,8 @@ import {NFTMarketplaceContext} from "../Context/NFTMarketplaceContext";
 
 const author = () => {
 
-    const followerArray = [
-        {background: images.creatorbackground1, image: images.user1, seller: "d8dvvdff9azxco-23fdf99fasd"},
-        {background: images.creatorbackground2, image: images.user2, seller: "d8dvvdff9azxco-23fdf99fasd"},
-        {background: images.creatorbackground3, image: images.user3, seller: "d8dvvdff9azxco-23fdf99fasd"},
-    ];
-
     const [collectiables, setCollectiables] = useState(true);
     const [created, setCreated] = useState(false);
-    const [like, setLike] = useState(false);
-    const [follower, setFollower] = useState(false);
-    const [following, setFollowing] = useState(false);
 
     // IMPORT SMART-CONTRACT DATA
     const {fetchMyNFTsOrListedNFTs, currentAccount} = useContext(NFTMarketplaceContext);
@@ -50,16 +41,10 @@ const author = () => {
             <AuthorTaps
                 setCollectiables={setCollectiables}
                 setCreated={setCreated}
-                setLike={setLike}
-                setFollower={setFollower}
-                setFollowing={setFollowing}
             />
             <AuthorNFTCardBox
                 collectiables={collectiables}
                 created={created}
-                like={like}
-                follower={follower}
-                following={following}
                 nfts={nfts}
                 myNFTs={myNFTs}
             />

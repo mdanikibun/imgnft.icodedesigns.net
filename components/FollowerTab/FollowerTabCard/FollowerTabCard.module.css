@@ -136,3 +136,8 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .FollowerTabCard_box_profile_img {
+        left: 40.7%;
+    }
+}

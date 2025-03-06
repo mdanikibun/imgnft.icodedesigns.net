@@ -19,38 +19,11 @@ const AuthorTaps = ({
         if ( btnText === "NFTs đang rao bán") {
             setCollectiables(true);
             setCreated(false);
-            setLike(false);
-            setFollowing(false);
-            setFollower(false);
             setActiveBtn(1);
         }  else if (btnText === "NFTs đang sở hữu") {
             setCollectiables(false);
             setCreated(true);
-            setLike(false);
-            setFollowing(false);
-            setFollower(false);
             setActiveBtn(2);
-        }  else if (btnText === "Liked") {
-            setCollectiables(false);
-            setCreated(false);
-            setLike(true);
-            setFollowing(false);
-            setFollower(false);
-            setActiveBtn(3);
-        }  else if (btnText === "Following") {
-            setCollectiables(false);
-            setCreated(false);
-            setLike(false);
-            setFollowing(true);
-            setFollower(false);
-            setActiveBtn(4);
-        }  else if (btnText === "Followers") {
-            setCollectiables(false);
-            setCreated(false);
-            setLike(false);
-            setFollowing(false);
-            setFollower(true);
-            setActiveBtn(5);
         }
     }
 

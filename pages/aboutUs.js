@@ -44,6 +44,7 @@ const aboutUs = () => {
                         <Image
                             src={images.hero}
                             alt="hero"
+                            className={Style.aboutUs_box_hero_right_img}
                         />
                     </div>
                 </div>

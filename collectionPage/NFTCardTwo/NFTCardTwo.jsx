@@ -50,6 +50,12 @@ const NFTCardTwo = ({NFTData}) => {
                     </div>
                 </Link>
             ))}
+
+            {(typeof NFTData !== "undefined" && NFTData.length === 0) && (
+                <p className={Style.NFTCardTwo_no_data}>
+                    <i>Không có NFT nào ở tab này.</i>
+                </p>
+            )}
         </div>
     )
 };

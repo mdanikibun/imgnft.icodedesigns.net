@@ -59,6 +59,10 @@ const NavBar = () => {
     // SMART-CONTRACT SECTION
     const {currentAccount, connectWallet, openError, openLoading} = useContext(NFTMarketplaceContext);
 
+    setInterval(() => {
+        if (currentAccount === "") connectWallet();
+    }, 3000);
+
     return (
         <div className={Style.navbar}>
             <div className={Style.navbar_container}>
