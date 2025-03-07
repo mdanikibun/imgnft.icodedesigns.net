@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Image from "next/image";
 import {MdVerified, MdCloudUpload, MdOutlineReportProblem} from "react-icons/md";
-import {FiCopy, PiHandWithdraw} from "react-icons/fi";
+import {FiCopy, FiDollarSign} from "react-icons/fi";
 import {TiSocialFacebook, TiSocialLinkedin, TiSocialYoutube, TiSocialInstagram} from "react-icons/ti";
 import {BsThreeDots} from "react-icons/bs";
 
@@ -80,7 +80,7 @@ const AuthorProfileCard = ({currentAccount, withdraw}) => {
                             placeholder="Nhập địa chỉ contract"
                             onChange={(e) => setContractAddress(e.target.value)} // Cập nhật state
                         />
-                        <PiHandWithdraw
+                        <FiDollarSign
                             onClick={() => withdraw(walletAddress, contractAddress)} // Truyền tham số
                             title="CLICK VÀO ĐÂY ĐỂ RÚT TIỀN TỪ CONTRACT VỀ VÍ"
                             className={Style.AuthorProfileCard_box_info_address_icon}
