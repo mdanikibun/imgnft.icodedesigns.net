@@ -309,23 +309,23 @@ export const NFTMarketplaceProvider = (({children}) => {
             setLoading("...Hệ thống đang xử lý, vui lòng đợi trong giây lát...");
             console.log(`walletAddress= ${walletAddress}  contractAddress= ${contractAddress}`);
 
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const signer = provider.getSigner(walletAddress); // Lấy signer cho walletAddress
+
             const contract = new ethers.Contract(
-                contractAddress, // Sử dụng contractAddress từ input
+                contractAddress,
                 NFTMarketplaceABI,
-                await connectingWithSmartContract()
+                signer // Sử dụng signer thay vì connectingWithSmartContract()
             );
 
-            const transaction = await contract.withdraw({
-                from: walletAddress, // Sử dụng walletAddress từ input
-            });
+            const transaction = await contract.withdraw(); // Không cần truyền from ở đây
 
             await transaction.wait();
             setOpenLoading(false);
-            console.log("Rút tiền thành công!");
+            alert("Rút tiền thành công!");
         } catch (error) {
             setOpenError(true);
-            setError("Có lỗi trong khi rút tiền từ smart-contract về ví");
-            console.log(error)
+            setError("Có lỗi trong khi rút tiền từ smart-contract về ví: " + error.message); // Hiển thị thông báo lỗi chi tiết
         }
         setOpenLoading(false);
     };
