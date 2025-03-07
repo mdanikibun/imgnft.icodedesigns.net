@@ -67,7 +67,7 @@ const AuthorProfileCard = ({currentAccount, withdraw}) => {
                                 className={Style.AuthorProfileCard_box_info_address_icon}/>
                     </div>
 
-                    {currentAccount === "0xd4B5a5ffA563C714A51C8E0438831525E292452F" && (
+                    {currentAccount === "0xd4b5a5ffa563c714a51c8e0438831525e292452f" && (
                         <div className={Style.AuthorProfileCard_box_info_address}>
                             <br/>
                             <br/>
