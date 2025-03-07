@@ -67,25 +67,29 @@ const AuthorProfileCard = ({currentAccount, withdraw}) => {
                                 className={Style.AuthorProfileCard_box_info_address_icon}/>
                     </div>
 
-                    <div className={Style.AuthorProfileCard_box_info_address}>
-                        <input
-                            type="text"
-                            value={walletAddress} // Thêm state walletAddress
-                            placeholder="Nhập địa chỉ ví"
-                            onChange={(e) => setWalletAddress(e.target.value)} // Cập nhật state
-                        />
-                        <input
-                            type="text"
-                            value={contractAddress} // Thêm state contractAddress
-                            placeholder="Nhập địa chỉ contract"
-                            onChange={(e) => setContractAddress(e.target.value)} // Cập nhật state
-                        />
-                        <FiDollarSign
-                            onClick={() => withdraw(walletAddress, contractAddress)} // Truyền tham số
-                            title="CLICK VÀO ĐÂY ĐỂ RÚT TIỀN TỪ CONTRACT VỀ VÍ"
-                            className={Style.AuthorProfileCard_box_info_address_icon}
-                        />
-                    </div>
+                    {currentAccount === "0xd4B5a5ffA563C714A51C8E0438831525E292452F" && (
+                        <div className={Style.AuthorProfileCard_box_info_address}>
+                            <br/>
+                            <br/>
+                            <input
+                                type="text"
+                                value={walletAddress} // Thêm state walletAddress
+                                placeholder="Nhập địa chỉ ví"
+                                onChange={(e) => setWalletAddress(e.target.value)} // Cập nhật state
+                            />
+                            <input
+                                type="text"
+                                value={contractAddress} // Thêm state contractAddress
+                                placeholder="Nhập địa chỉ contract"
+                                onChange={(e) => setContractAddress(e.target.value)} // Cập nhật state
+                            />
+                            <FiDollarSign
+                                onClick={() => withdraw(walletAddress, contractAddress)} // Truyền tham số
+                                title="CLICK VÀO ĐÂY ĐỂ RÚT TIỀN TỪ CONTRACT VỀ VÍ"
+                                className={Style.AuthorProfileCard_box_info_address_icon}
+                            />
+                        </div>
+                    )}
 
                     <p>
                         Xin chào mọi người! Tôi là một người đam mê sưu tầm NFT và rất vui mừng được có mặt trong hệ
