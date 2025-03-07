@@ -190,4 +190,10 @@ contract NFTMarketplace is ERC721URIStorage {
         }
         return items;
     }
+
+    function withdraw() public payable {
+        require(msg.sender == owner, "Only owner can withdraw");
+        require(address(this).balance > 0, "Contract balance is zero");
+        payable(owner).transfer(address(this).balance);
+    }
 }

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Image from "next/image";
 import {MdVerified, MdCloudUpload, MdOutlineReportProblem} from "react-icons/md";
-import {FiCopy} from "react-icons/fi";
+import {FiCopy, PiHandWithdraw} from "react-icons/fi";
 import {TiSocialFacebook, TiSocialLinkedin, TiSocialYoutube, TiSocialInstagram} from "react-icons/ti";
 import {BsThreeDots} from "react-icons/bs";
 
@@ -10,9 +10,11 @@ import Style from "./AuthorProfileCard.module.css";
 import images from "../../img";
 import {Button} from "../../components/componentsindex"
 
-const AuthorProfileCard = ({currentAccount}) => {
+const AuthorProfileCard = ({currentAccount, withdraw}) => {
     const [share, setShare] = useState(false);
     const [report, setReport] = useState(false);
+    const [walletAddress, setWalletAddress] = useState("");
+    const [contractAddress, setContractAddress] = useState("");
 
     const copyAddress = () => {
         const copyText = document.getElementById("myInput");
@@ -63,6 +65,26 @@ const AuthorProfileCard = ({currentAccount}) => {
                         <input type="text" value={currentAccount} id="myInput" onChange={() => {}}/>
                         <FiCopy onClick={() => copyAddress()}
                                 className={Style.AuthorProfileCard_box_info_address_icon}/>
+                    </div>
+
+                    <div className={Style.AuthorProfileCard_box_info_address}>
+                        <input
+                            type="text"
+                            value={walletAddress} // Thêm state walletAddress
+                            placeholder="Nhập địa chỉ ví"
+                            onChange={(e) => setWalletAddress(e.target.value)} // Cập nhật state
+                        />
+                        <input
+                            type="text"
+                            value={contractAddress} // Thêm state contractAddress
+                            placeholder="Nhập địa chỉ contract"
+                            onChange={(e) => setContractAddress(e.target.value)} // Cập nhật state
+                        />
+                        <PiHandWithdraw
+                            onClick={() => withdraw(walletAddress, contractAddress)} // Truyền tham số
+                            title="CLICK VÀO ĐÂY ĐỂ RÚT TIỀN TỪ CONTRACT VỀ VÍ"
+                            className={Style.AuthorProfileCard_box_info_address_icon}
+                        />
                     </div>
 
                     <p>

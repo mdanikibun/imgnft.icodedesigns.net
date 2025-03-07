@@ -302,6 +302,33 @@ export const NFTMarketplaceProvider = (({children}) => {
         setOpenLoading(false);
     }
 
+    // WITHDRAW NFT FUNCTION
+    const withdraw = async (walletAddress, contractAddress) => {
+        try {
+            setOpenLoading(true);
+            setLoading("...Hệ thống đang xử lý, vui lòng đợi trong giây lát...");
+            console.log(`walletAddress= ${walletAddress}  contractAddress= ${contractAddress}`);
+
+            const contract = new ethers.Contract(
+                contractAddress, // Sử dụng contractAddress từ input
+                NFTMarketplaceABI,
+                await connectingWithSmartContract()
+            );
+
+            const transaction = await contract.withdraw({
+                from: walletAddress, // Sử dụng walletAddress từ input
+            });
+
+            await transaction.wait();
+            setOpenLoading(false);
+            console.log("Rút tiền thành công!");
+        } catch (error) {
+            setOpenError(true);
+            setError("Có lỗi trong khi rút tiền từ smart-contract về ví");
+        }
+        setOpenLoading(false);
+    };
+
     return (
         <NFTMarketplaceContext.Provider value={{
             checkIfWalletConnected, //-> check when enter site
@@ -312,6 +339,7 @@ export const NFTMarketplaceProvider = (({children}) => {
             fetchMyNFTsOrListedNFTs,
             buyNFT,
             createSale,
+            withdraw,
             currentAccount,
             titleData,
             setOpenError,

@@ -17,7 +17,7 @@ const author = () => {
     const [created, setCreated] = useState(false);
 
     // IMPORT SMART-CONTRACT DATA
-    const {fetchMyNFTsOrListedNFTs, currentAccount} = useContext(NFTMarketplaceContext);
+    const {fetchMyNFTsOrListedNFTs, currentAccount, withdraw} = useContext(NFTMarketplaceContext);
 
     const [nfts, setNfts] = useState([]);
     const [myNFTs, setMyNFTs] = useState([]);
@@ -37,7 +37,10 @@ const author = () => {
     return (
         <div className={Style.author}>
             <Banner bannerImage={images.creatorbackground2}/>
-            <AuthorProfileCard currentAccount={currentAccount}/>
+            <AuthorProfileCard
+                currentAccount={currentAccount}
+                withdraw={withdraw}
+            />
             <AuthorTaps
                 setCollectiables={setCollectiables}
                 setCreated={setCreated}
