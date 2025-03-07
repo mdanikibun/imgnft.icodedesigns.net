@@ -325,6 +325,7 @@ export const NFTMarketplaceProvider = (({children}) => {
         } catch (error) {
             setOpenError(true);
             setError("Có lỗi trong khi rút tiền từ smart-contract về ví");
+            console.log(error)
         }
         setOpenLoading(false);
     };
