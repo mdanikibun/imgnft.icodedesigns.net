@@ -286,6 +286,11 @@ export const NFTMarketplaceProvider = (({children}) => {
     // BUY NFTs FUNCTION
     const buyNFT = async (nft) => {
         try {
+            if (currentAccount === "") {
+                return setOpenError(true),
+                setError("Vui lòng kết nối ví trước khi mua NFT");
+            }
+
             setOpenLoading(true);
             setLoading('...Hệ thống đang xử lý, vui lòng đợi trong giây lát...');
 
@@ -332,6 +337,20 @@ export const NFTMarketplaceProvider = (({children}) => {
         }
         setOpenLoading(false);
     };
+
+    const checkAccountsChanged = async () => {
+        window.ethereum.on('accountsChanged', (accounts) => {
+            if (accounts.length > 0) {
+                connectWallet();
+            } else {
+                setCurrentAccount("");
+            }
+        });
+    };
+
+    useEffect(() => {
+        checkAccountsChanged();
+    }, []);
 
     return (
         <NFTMarketplaceContext.Provider value={{
