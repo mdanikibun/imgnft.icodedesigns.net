@@ -22,7 +22,7 @@ const Discover = () => {
         },
         {
             name: "Lịch sử giao dịch",
-            link: "https://sepolia.etherscan.io/address/0xaA56808a1A7C405E574D8320E64377Be0c46A859#nfttransfers"
+            link: "https://sepolia.etherscan.io/address/0xaA56808a1A7C405E574D8320E64377Be0c46A859"
         }
     ];
     return (
