@@ -9,10 +9,9 @@ import images from "../img";
 const aboutUs = () => {
 
     const founderArray = [
-        {name: "Founder 1", position: "Chủ tịch", image: images.founder1},
-        {name: "Founder 2", position: "Tổng giám đốc điều hành", image: images.founder2},
-        {name: "Founder 3", position: "Giám đốc điều hành", image: images.founder3},
-        {name: "Founder 4", position: "Giám đốc chiến lược", image: images.founder4},
+        {name: "Đào Văn Phụng", position: "Giáo viên hướng dẫn", image: images.founder1},
+        {name: "Phan Lê Khánh Linh", position: "Học sinh thực hiện", image: images.founder3},
+        {name: "Nguyễn Hữu Khánh Hoàng", position: "Học sinh thực hiện", image: images.founder1}
     ];
 
     const factsArray = [
@@ -35,9 +34,10 @@ const aboutUs = () => {
                     <div className={Style.aboutUs_box_hero_left}>
                         <h1>✋ Về Chúng Tôi.</h1>
                         <p>
-                            Chúng tôi công bằng và độc lập, và mỗi ngày chúng tôi tạo ra các chương trình và nội dung
-                            đặc biệt, đẳng cấp thế giới để cung cấp thông tin, giáo dục và giải trí cho hàng triệu người
-                            trên khắp thế giới.
+                            Là những học sinh đam mê về lĩnh vực tin học phần mềm, chúng em đã không ngừng cố gắng, chăm
+                            chỉ học hỏi để ra mắt một nền tảng công nghệ mới này. Trang web này không chỉ là một dự án,
+                            mà còn là tâm huyết của chúng em. Chúng em luôn nỗ lực để mang đến trải nghiệm tốt nhất,
+                            đồng thời lắng nghe mọi góp ý để không ngừng hoàn thiện.
                         </p>
                     </div>
                     <div className={Style.aboutUs_box_hero_right}>
@@ -50,10 +50,9 @@ const aboutUs = () => {
                 </div>
 
                 <div className={Style.aboutUs_box_title}>
-                    <h2>🌂Nhà Sáng Lập</h2>
+                    <h2>🌂Các Thành Viên</h2>
                     <p>
-                        Chúng tôi vô tư và độc lập, và mỗi ngày chúng tôi tạo ra các chương trình và
-                        nội dung đặc biệt, đẳng cấp thế giới
+                        Hiện đang học tập và công tác tại trường THPT An Lương Đông, Lộc An, Phú Lộc, TP Huế
                     </p>
                 </div>
 

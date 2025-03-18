@@ -50,7 +50,7 @@ export const NFTMarketplaceProvider = (({children}) => {
     const checkIfWalletConnected = async () => {
         try {
             if (!window.ethereum)
-                return setOpenError(true), setError("Install MetaMask");
+                return setOpenError(true), setError("Vui lòng cài đặt MetaMask");
 
             const accounts = await window.ethereum.request({
                 method: "eth_accounts",
@@ -59,16 +59,17 @@ export const NFTMarketplaceProvider = (({children}) => {
             if (accounts.length) {
                 setCurrentAccount(accounts[0]);
             } else {
-                //setOpenError(true);
-                //setError("Không tìm thấy tài khoản");
+                // setOpenError(true);
+                // setError("Không tìm thấy tài khoản");
                 console.log("Không tìm thấy tài khoản");
             }
 
             console.log(`checkIfWalletConnected: ${currentAccount}`);
 
         } catch (error) {
-            setOpenError(true);
-            setError("Có lỗi trong khi kết nối Ví Điện Tử");
+            // setOpenError(true);
+            // setError("Có lỗi trong khi kết nối Ví Điện Tử");
+            console.log("Có lỗi trong khi kết nối Ví Điện Tử");
         }
     }
 
@@ -80,15 +81,17 @@ export const NFTMarketplaceProvider = (({children}) => {
     const connectWallet = async () => {
         try {
             if (!window.ethereum)
-                return setOpenError(true), setError("Không tìm thấy tài khoản");
+                //return setOpenError(true), setError("Không tìm thấy tài khoản");
+                return console.log("Không tìm thấy tài khoản");
 
             const accounts = await window.ethereum.request({
                 method: "eth_requestAccounts",
             });
             setCurrentAccount(accounts[0]);
         } catch (error) {
-            setOpenError(true);
-            setError("Có lỗi trong khi kết nối Ví Điện Tử");
+            // setOpenError(true);
+            // setError("Có lỗi trong khi kết nối Ví Điện Tử");
+            console.log("Có lỗi trong khi kết nối Ví Điện Tử");
         }
     }
 

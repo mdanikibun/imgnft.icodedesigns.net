@@ -45,7 +45,7 @@ const AuthorProfileCard = ({currentAccount, withdraw}) => {
             <div className={Style.AuthorProfileCard_box}>
                 <div className={Style.AuthorProfileCard_box_img}>
                     <Image
-                        src={images.founder1}
+                        src={images.founder3}
                         className={Style.AuthorProfileCard_box_img_img}
                         alt="NFT IMAGES"
                         width={220}
@@ -55,14 +55,15 @@ const AuthorProfileCard = ({currentAccount, withdraw}) => {
 
                 <div className={Style.AuthorProfileCard_box_info}>
                     <h2>
-                        Tên-Tác-Giả{""}{" "}
+                        Phan Lê Khánh Linh{""}{" "}
                         <span>
                         <MdVerified/>
                     </span>{" "}
                     </h2>
 
                     <div className={Style.AuthorProfileCard_box_info_address}>
-                        <input type="text" value={currentAccount} id="myInput" onChange={() => {}}/>
+                        <input type="text" value={currentAccount} id="myInput" onChange={() => {
+                        }}/>
                         <FiCopy onClick={() => copyAddress()}
                                 className={Style.AuthorProfileCard_box_info_address_icon}/>
                     </div>
@@ -92,11 +93,10 @@ const AuthorProfileCard = ({currentAccount, withdraw}) => {
                     )}
 
                     <p>
-                        Xin chào mọi người! Tôi là một người đam mê sưu tầm NFT và rất vui mừng được có mặt trong hệ
-                        thống này. Đối với tôi, NFT không chỉ là những tác phẩm nghệ thuật số độc đáo, mà còn là một
-                        cánh cửa mở ra thế giới của những khả năng sáng tạo không giới hạn. Tôi tin rằng NFT sẽ tiếp tục
-                        phát triển mạnh mẽ và mang đến những giá trị to lớn cho cả nghệ sĩ và nhà sưu tầm. Tôi rất mong
-                        được chia sẻ niềm đam mê này với tất cả mọi người trong cộng đồng!
+                        Là những học sinh đam mê về lĩnh vực tin học phần mềm, chúng em đã không ngừng cố gắng, chăm chỉ
+                        học hỏi để ra mắt một nền tảng công nghệ mới này. Trang web này không chỉ là một dự án, mà còn
+                        là tâm huyết của chúng em. Chúng em luôn nỗ lực để mang đến trải nghiệm tốt nhất, đồng thời lắng
+                        nghe mọi góp ý để không ngừng hoàn thiện.
                     </p>
 
                     <div className={Style.AuthorProfileCard_box_info_social}>
